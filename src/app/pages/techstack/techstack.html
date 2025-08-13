@@ -1,0 +1,17 @@
+<div class="w-screen h-screen py-6 container mx-auto ">
+    <div class="container flex justify-center flex-col items-center">
+       
+        <h1 class="font-bold text-[50px]">Techstack</h1>
+            <p class="bg-gray-200 rounded-full px-4 py-2 border-gray-600 mb-3">👨‍💻Tech stack that I've worked with so far.💻</p>
+    </div>
+    <div class="container ">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 mt-6 w-max mx-auto gap-x-3 gap-y-3">
+            @for(icon of svgFiles; track $index){
+                <app-techstack-icons [svgName]="icon.name" [fileName]="icon.filename" altName="{{icon.alt}}"></app-techstack-icons>
+            }
+        </div>
+    </div>
+
+
+</div>
+

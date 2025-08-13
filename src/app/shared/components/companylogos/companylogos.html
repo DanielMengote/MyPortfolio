@@ -1,0 +1,22 @@
+<div class="overflow-hidden w-full relative max-w-5xl mx-auto select-none py-12">
+  <div class="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
+
+  <div class="marquee-inner h-15 flex will-change-transform min-w-[200%]">
+    <div class="flex">
+       
+     
+
+      @for(logo of displayLogos; track $index) {
+        <img
+          class="w-full h-full object-cover mx-6"
+          [src]="getLogoUrl(logo)"
+          [alt]="logo.charAt(0).toUpperCase() + logo.slice(1)"
+          draggable="false"
+        />
+      }
+     
+    </div>
+  </div>
+
+  <div class="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
+</div>

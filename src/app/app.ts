@@ -3,11 +3,14 @@ import { Navbar } from './shared/components/navbar/navbar';
 import { Home } from './pages/home/home';
 import { Projects } from "./pages/projects/projects";
 import { Footer } from "./shared/components/footer/footer";
+import { Companylogos } from "./shared/components/companylogos/companylogos";
+import { Techstack } from "./pages/techstack/techstack";
+import { Experience } from "./pages/experience/experience";
 // import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [Navbar, Home, Projects, Footer],
+  imports: [Navbar, Home, Projects, Footer, Companylogos, Techstack, Experience],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

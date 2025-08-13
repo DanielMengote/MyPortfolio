@@ -1,7 +1,20 @@
-<div class="w-screen h-screen bg-gray-400">
-     <div class="container h-screen mx-auto px-4 py-8 bg-cyan-200">
-    <h1 class="text-3xl font-bold mb-6">Welcome to My Projects</h1>
-    <p class="mb-4">This is a simple portfolio page built with Angular and Tailwind CSS.</p>
-    <p>Explore my projects and get to know more about me!</p>
+
+
+<div class="h-screen w-screen mx-auto p-6 flex flex-col">
+  
+  <div class=" p-6">
+    <h1 class="text-3xl font-semibold text-center mx-auto">Recent Projects</h1>
+    <p class="text-sm text-slate-500 text-center mt-2 max-w-md mx-auto">Everything you need to manage, track, and grow your finances, securely and efficiently.</p>
   </div>
+  <div class="flex flex-wrap items-center justify-center gap-10 mt-8 ">
+
+    @for(items of cardDetails; track $index){
+      <app-card-projects [image]="items.image" [title] = "items.title" [description]="items.description"></app-card-projects>
+    }
+    
+  </div>
+
 </div>
+
+
+
