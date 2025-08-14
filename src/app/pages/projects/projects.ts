@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { Card } from "../../shared/components/card/card";
 import { CardProjects } from '../../shared/components/card-projects/card-projects';
 
 @Component({
   selector: 'app-projects',
-  imports: [Card, CardProjects],
+  imports: [CardProjects],
   templateUrl: './projects.html',
   styleUrl: './projects.scss'
 })
