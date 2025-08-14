@@ -21,9 +21,9 @@ export class Home implements OnInit {
       writer
       .strings(
         400,
-        "Fullstack Web Developer.",
-        "IT Support Specialist.", 
-        "Computer Enthusiast."
+        "Fullstack Web Developer.🌐",
+        "IT Support Specialist.💻", 
+        "Computer Enthusiast.👨‍💻"
       )
       .start()
 } 

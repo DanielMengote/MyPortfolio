@@ -6,12 +6,19 @@
     </div>
     <div class="container ">
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 mt-6 w-max mx-auto gap-x-3 gap-y-3">
-            @for(icon of svgFiles; track $index){
-                <app-techstack-icons [svgName]="icon.name" [fileName]="icon.filename" altName="{{icon.alt}}"></app-techstack-icons>
+            @for(icon of techstackSvgFiles; track $index){
+                <app-techstack-icons [svgName]="icon.name" [fileName]="icon.filename" [path]="icon.filepath" altName="{{icon.alt}}"></app-techstack-icons>
             }
         </div>
     </div>
-
+    <div class="container flex justify-center flex-col items-center mt-15">
+        <h1 class="font-bold text-[50px]">Other Tools</h1>
+    </div>
+     <div class="grid grid-cols-2 sm:grid-cols-3 place-items-center  md:grid-cols-6 mt-6 gap-x-3 gap-y-3">
+        @for(icon of otherToolsSvgFiles; track $index){
+            <app-techstack-icons [svgName]="icon.name" [fileName]="icon.filename" [path]="icon.filepath"  altName="{{icon.alt}}"></app-techstack-icons>
+        }
+    </div>
 
 </div>
 

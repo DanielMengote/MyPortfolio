@@ -11,5 +11,6 @@ export class TechstackIcons {
   @Input() svgName: string = ('Icon Name');
   @Input() fileName: string = ('File Name');
   @Input() altName: string = ('Alt Name');
+  @Input() path: string = ('path');
 
 }
