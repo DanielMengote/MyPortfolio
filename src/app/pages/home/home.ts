@@ -23,7 +23,7 @@ export class Home implements OnInit {
         400,
         "Fullstack Web Developer.🌐",
         "IT Support Specialist.💻", 
-        "Computer Enthusiast.👨‍💻"
+        "Tech Enthusiast.👨‍💻"
       )
       .start()
 } 

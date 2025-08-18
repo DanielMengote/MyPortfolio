@@ -89,8 +89,13 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/aos/dist/aos.css"
+            ],
+            "scripts": [
+              "node_modules/aos/dist/aos.js"
             ]
+            
           }
         }
       }
