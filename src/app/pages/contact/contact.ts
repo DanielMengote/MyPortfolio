@@ -18,7 +18,7 @@ export class Contact {
     message: ''
   }
 
-  sendEmail(){
+  sendEmail(contact: Contacts){
     console.log("test");
   };
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { AfterViewInit, Component, OnInit, signal } from '@angular/core';
 import { Navbar } from './shared/components/navbar/navbar';
 import { Home } from './pages/home/home';
 import { Footer } from "./shared/components/footer/footer";
@@ -16,14 +16,13 @@ import AOS from 'aos';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App implements OnInit{
+export class App implements  AfterViewInit  {
   protected readonly title = signal('portfolio');
 
-    ngOnInit() {
-      AOS.init({
-         disable: 'mobile',
-         once: true
-
-      });
-    }
+   ngAfterViewInit() {
+    AOS.init({
+      duration: 1000, // animation duration
+      once: true,     // whether animation should happen only once
+    });
+  }
 }
