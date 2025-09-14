@@ -9,7 +9,7 @@ export class WorkExperienceService {
     {
       id: 1,
       company: "4Ps Party-list Regional Office",
-      position: "Fullstack Developer",
+      position: "Fullstack Web Developer",
       duration: "1 Year",
       startDate: "Jul 2024",
       endDate: "Jul 2025",

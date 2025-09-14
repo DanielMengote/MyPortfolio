@@ -6,6 +6,7 @@ import { SocialInterface } from '../../shared/models/interfaces/social-interface
 import { SocialsButtons } from "../../shared/components/buttons/socials-buttons/socials-buttons";
 import { EmailService } from '../../shared/services/emailjs-service';
 import { ContactForm } from "../../shared/components/contact-form/contact-form";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contact',  
@@ -23,7 +24,21 @@ export class Contact {
   public sendEmail(formData: Contacts) {
     this.emailService.sendEmail(formData)
     .then(() => {
-      console.log('Email sent successfully');
+        Swal.fire({
+        icon: 'success',
+        title: 'Email Sent',
+        text: 'Your message has been sent successfully!',
+        confirmButtonText: 'OK'
+      });
+    })
+    .catch(err => {
+      console.error('Error sending email', err);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong while sending your message.',
+        confirmButtonText: 'OK'
+      });
     })
     .catch(err => {
       console.error('Error sending email', err);

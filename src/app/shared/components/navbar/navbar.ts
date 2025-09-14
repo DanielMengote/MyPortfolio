@@ -29,4 +29,6 @@ export class Navbar {
     }
     this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // prevent negative scroll
   }
+
+  
 }

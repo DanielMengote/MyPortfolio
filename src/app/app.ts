@@ -8,11 +8,12 @@ import { Contact } from "./pages/contact/contact";
 import { Aboutme } from "./pages/aboutme/aboutme";
 import { Certificates } from "./pages/certificates/certificates";
 import AOS from 'aos';
-// import { RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
+import { Testingpage } from "./testingpage/testingpage";
 
 @Component({
   selector: 'app-root',
-  imports: [Navbar, Home, Footer, Techstack, Experience, Contact, Aboutme, Certificates, ],
+  imports: [Navbar, Home, Footer, Techstack, Experience, Contact, Aboutme, Certificates, Testingpage],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

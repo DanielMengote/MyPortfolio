@@ -24,7 +24,7 @@ export class ContactForm {
   constructor() {
     this.contactForm = this.fb.group({
       name: [''],
-      email: [''],
+      email: ['', Validators.email],
       message: [''],
     });
   }

@@ -17,5 +17,4 @@ export class Experience {
 
   workExperience = signal<WorkExperienceInterface[]>(this.workExpService.workExperience);
 
-
 }
