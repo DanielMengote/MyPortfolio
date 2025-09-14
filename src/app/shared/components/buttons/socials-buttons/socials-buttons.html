@@ -1,0 +1,11 @@
+
+<div class="space-y-3">
+    
+@for(social of socialsAccounts(); track social.id){
+    <a href="{{social.link}}" target="_blank" class="border-2 bg-black text-sm font-bold text-white rounded-lg  mx-2 px-6 py-2 flex items-center gap-x-2 hover:-translate-y-1 transition duration-300 hover:bg-gray-800">
+        <i class="{{social.icon}}"></i>
+        {{social.socialPlatform}}
+    </a>
+}
+
+</div>

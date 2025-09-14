@@ -1,25 +1,17 @@
 <div class="min-w-full min-h-screen w-auto h-auto flex items-center flex-col justify-center py-6 mx-auto ">
-    <div class="container flex justify-center flex-col items-center" >
-       
-        <h1 class="font-bold text-[50px]"  data-aos="fade-right" data-aos-anchor-placement="top-center" data-aos-duration="1300">Techstack</h1>
-        <p class="bg-gray-200 rounded-full px-4 py-2 border-gray-600 mb-3"  data-aos="fade-left" data-aos-anchor-placement="top-center" data-aos-duration="1300">👨‍💻Tech stack that I've worked with so far.💻</p>
-    </div>
-    <div class="container "  data-aos="zoom-in" data-aos-anchor-placement="top-center" data-aos-duration="1300">
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 mt-6 w-max mx-auto gap-x-3 gap-y-3">
-            @for(icon of techstackSvgFiles; track $index){
-                <app-techstack-icons [svgName]="icon.name" [fileName]="icon.filename" [path]="icon.filepath" altName="{{icon.alt}}"></app-techstack-icons>
-            }
-        </div>
-    </div>
-    <div class="container flex justify-center flex-col items-center mt-15">
-        <h1 class="font-bold text-[50px]" data-aos="fade-left" 
-   data-aos-anchor-placement="top-center" data-aos-duration="1300">Other Tools</h1>
-    </div>
-     <div class="grid grid-cols-2 sm:grid-cols-3 place-items-center  md:grid-cols-6 mt-6 gap-x-3 gap-y-3"  data-aos="zoom-in" data-aos-anchor-placement="top-center" data-aos-duration="1300">
-        @for(icon of otherToolsSvgFiles; track $index){
-            <app-techstack-icons [svgName]="icon.name" [fileName]="icon.filename" [path]="icon.filepath"  altName="{{icon.alt}}"></app-techstack-icons>
-        }
-    </div>
+    
+    
+    <app-section-title [sectionDescription]="'👨‍💻Tech stack that Ive worked with so far.💻'" [sectionTitle]="'Techstack'" data-aos="fade-right" data-aos-anchor-placement="top-center" data-aos-duration="1300"/>
+   
+    <app-tecstacklist [techStackList]="techstackSvgFiles()" data-aos="fade-left" data-aos-anchor-placement="top-center" data-aos-duration="1300"/>
+
+
+    <div class="my-7"></div>
+
+    
+    <app-section-title [sectionTitle]="'Other Tools'" [sectionDescription]="'🛠️ Other tools Ive worked with along the way.🚀'" data-aos="fade-right" data-aos-anchor-placement="top-center" data-aos-duration="1300"></app-section-title>
+
+    <app-tecstacklist [techStackList]="otherToolsSvgFiles()" data-aos="fade-left" data-aos-anchor-placement="top-center" data-aos-duration="1300"></app-tecstacklist>
 
 </div>
 

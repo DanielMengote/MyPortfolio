@@ -16,13 +16,14 @@ import AOS from 'aos';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App implements  AfterViewInit  {
+export class App implements  OnInit  {
   protected readonly title = signal('portfolio');
 
-   ngAfterViewInit() {
+   ngOnInit() {
     AOS.init({
-      duration: 1000, // animation duration
-      once: true,     // whether animation should happen only once
+      offset: 50,
+      duration: 1000, 
+      once: false ,
     });
   }
 }
