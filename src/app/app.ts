@@ -9,11 +9,11 @@ import { Aboutme } from "./pages/aboutme/aboutme";
 import { Certificates } from "./pages/certificates/certificates";
 import AOS from 'aos';
 import { RouterOutlet } from '@angular/router';
-import { Testingpage } from "./testingpage/testingpage";
+import { Navbar1 } from "./shared/components/navbar1/navbar1";
 
 @Component({
   selector: 'app-root',
-  imports: [Navbar, Home, Footer, Techstack, Experience, Contact, Aboutme, Certificates, Testingpage],
+  imports: [ Home, Footer, Techstack, Experience, Contact, Aboutme, Certificates, Navbar1],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
@@ -22,9 +22,9 @@ export class App implements  OnInit  {
 
    ngOnInit() {
     AOS.init({
-      offset: 50,
+      offset: 120,
       duration: 1000, 
-      once: false ,
+      once: true ,
     });
   }
 }

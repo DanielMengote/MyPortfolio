@@ -1,0 +1,48 @@
+<p>navbar1 works!</p>
+
+<nav class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+  <div class="flex items-center justify-between sm:justify-around  px-6 py-4">
+    <div class="text-2xl font-bold">
+        <img src="images/adx_logo.png" class="w-12" alt="adxLogo">
+    </div>
+
+    <!-- Desktop nav -->
+    <ul class="hidden sm:flex space-x-6 font-medium text-gray-500 ">
+      <li><a href="#about" class="hover:text-orange-500 transition-color duration-500">About Me</a></li>
+      <li><a href="#skills" class="hover:text-orange-500 transition-color duration-500">Skills</a></li>
+      <li><a href="#experience" class="hover:text-orange-500 transition-color duration-500">Experience</a></li>
+      <li><a href="#certificates" class="hover:text-orange-500 transition-color duration-500">Certificates</a></li>
+      <li><a href="#contact" class="hover:text-orange-500 transition-color duration-500">Contact Me</a></li>
+    </ul>
+
+    <!-- Mobile hamburger -->
+    <button 
+    (click)="toggleMenu()" 
+    class="sm:hidden text-2xl focus:outline-none"
+    >
+    ☰
+    </button>
+  </div>
+
+  <!-- Mobile menu (always in DOM, slide in/out with classes) -->
+  <div 
+    class="fixed font-medium text-gray-500  inset-0 bg-white flex flex-col items-center justify-center text-2xl space-y-8 transform transition-transform duration-300"
+    [class.translate-x-0]="menuOpen"
+    [class.translate-x-full]="!menuOpen"
+  >
+    <button (click)="toggleMenu()" class="absolute top-5 right-6 text-3xl"> ✕ </button>
+    <div class="absolute top-30 ">
+        <img src="images/adx_logo.png" class="w-30" alt="adxLogo">
+    </div>    
+    <div class="flex-1 flex flex-col items-center justify-center space-y-6 ">
+        <a href="#about" class="hover:text-orange-500 transition-color duration-300" (click)="toggleMenu()">About Me</a>
+        <a href="#skills" class="hover:text-orange-500 transition-color duration-300" (click)="toggleMenu()">Skills</a>
+        <a href="#experience" class="hover:text-orange-500 transition-color duration-300" (click)="toggleMenu()">Experience</a>
+        <a href="#certificates" class="hover:text-orange-500 transition-color duration-300" (click)="toggleMenu()">Certificates</a>
+        <a href="#contact" class="hover:text-orange-500 transition-color duration-300" (click)="toggleMenu()">Contact Me</a>
+
+    </div>
+    
+  </div>
+
+</nav>
