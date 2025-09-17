@@ -1,35 +1,48 @@
+<p>navbar1 works!</p>
 
-
-
-<header  
-  [ngClass]="isNavbarVisible ? 'translate-y-0 opacity-90' : '-translate-y-full opacity-0'" 
-  class="sticky top-0 bg-gray-100/70 shadow-md z-[100] px-4 p-2 py-4 mb-2
-         transition-all duration-500 ease-in-out backdrop-blur-md">
-
-  <div class="relative mx-auto flex max-w-screen-lg flex-col sm:flex-row sm:items-center sm:justify-around">
-    
-    <a href="" class="flex items-center mx-3">
+<nav class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+  <div class="flex items-center justify-between sm:justify-around  px-6 py-4">
+    <div class="text-2xl font-bold">
         <img src="images/adx_logo.png" class="w-12" alt="adxLogo">
-    </a>
-    <input type="checkbox" class="peer hidden" id="navbar-open">
-    <label class="absolute right-8 top-4 mt-1 cursor-pointer sm:hidden text-xl" for="navbar-open">
-      <span class="sr-only">Toggle Navigation</span>
-      <svg xmlns="http://www.w3.org/2000/svg" width="0.88em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zm448 160c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h384c17.7 0 32 14.3 32 32z" /></svg>
-    </label>
+    </div>
 
-    <nav aria-label="Header Navigation" class="flex items-center peer-checked:block hidden pl-2 py-6 sm:block sm:py-0">
-      <ul class="flex flex-col items-center gap-y-4 sm:flex-row sm:gap-x-8">
-        <li class="font-medium"><a class="text-gray-600  font-medium text-gray-400 hover:text-orange-500" href="#about">About Me</a></li>
-        <li class="font-medium"><a class="text-gray-600  font-medium text-gray-400 hover:text-orange-500" href="#skills">Skills</a></li>
-        <li class="font-medium"><a class="text-gray-600 text-lg font-medium text-gray-400 hover:text-orange-500" href="#experience">Experience</a></li>
-        <li class="font-medium"><a class="text-gray-600 text-lg font-medium text-gray-400 hover:text-orange-500" href="#certificates">certificates</a></li>
-        <li class="font-medium"><a class="text-gray-600 text-lg font-medium text-gray-400 hover:text-orange-500" href="#contact">Contact Me</a></li>
-        <li class="mt-2 sm:mt-0">
-        </li>
-      </ul>
-    </nav>
+    <!-- Desktop nav -->
+    <ul class="hidden sm:flex space-x-6 font-medium text-gray-500 ">
+      <li><a href="#about" class="hover:text-orange-500 transition-color duration-500">About Me</a></li>
+      <li><a href="#skills" class="hover:text-orange-500 transition-color duration-500">Skills</a></li>
+      <li><a href="#experience" class="hover:text-orange-500 transition-color duration-500">Experience</a></li>
+      <li><a href="#certificates" class="hover:text-orange-500 transition-color duration-500">Certificates</a></li>
+      <li><a href="#contact" class="hover:text-orange-500 transition-color duration-500">Contact </a></li>
+    </ul>
+
+    <!-- Mobile hamburger -->
+    <button 
+    (click)="toggleMenu()" 
+    class="sm:hidden text-2xl focus:outline-none"
+    >
+    ☰
+    </button>
   </div>
 
+  <!-- Mobile menu (always in DOM, slide in/out with classes) -->
+  <div 
+    class="fixed font-medium text-gray-500  inset-0 bg-white flex flex-col items-center justify-center text-2xl space-y-8 transform transition-transform duration-300"
+    [class.translate-x-0]="menuOpen"
+    [class.translate-x-full]="!menuOpen"
+  >
+    <button (click)="toggleMenu()" class="absolute top-5 right-6 text-3xl"> ✕ </button>
+    <div class="absolute top-30 ">
+        <img src="images/adx_logo.png" class="w-30" alt="adxLogo">
+    </div>    
+    <div class="flex-1 flex flex-col items-center justify-center space-y-6 ">
+        <a href="#about" class="hover:text-orange-500 transition-color duration-300" (click)="toggleMenu()">About Me</a>
+        <a href="#skills" class="hover:text-orange-500 transition-color duration-300" (click)="toggleMenu()">Skills</a>
+        <a href="#experience" class="hover:text-orange-500 transition-color duration-300" (click)="toggleMenu()">Experience</a>
+        <a href="#certificates" class="hover:text-orange-500 transition-color duration-300" (click)="toggleMenu()">Certificates</a>
+        <a href="#contact" class="hover:text-orange-500 transition-color duration-300" (click)="toggleMenu()">Contact </a>
 
+    </div>
+    
+  </div>
 
-</header>
+</nav>

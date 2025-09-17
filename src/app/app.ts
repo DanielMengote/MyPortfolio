@@ -9,11 +9,10 @@ import { Aboutme } from "./pages/aboutme/aboutme";
 import { Certificates } from "./pages/certificates/certificates";
 import AOS from 'aos';
 import { RouterOutlet } from '@angular/router';
-import { Navbar1 } from "./shared/components/navbar1/navbar1";
 
 @Component({
   selector: 'app-root',
-  imports: [ Home, Footer, Techstack, Experience, Contact, Aboutme, Certificates, Navbar1],
+  imports: [Home, Footer, Techstack, Experience, Contact, Aboutme, Certificates, Navbar],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
