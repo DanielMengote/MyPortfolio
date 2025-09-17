@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, signal } from '@angular/core';
+import { AfterViewInit, Component, inject, NgZone, OnInit, signal } from '@angular/core';
 import { Navbar } from './shared/components/navbar/navbar';
 import { Home } from './pages/home/home';
 import { Footer } from "./shared/components/footer/footer";
@@ -19,13 +19,26 @@ import { RouterOutlet } from '@angular/router';
 export class App implements AfterViewInit {
   protected readonly title = signal('portfolio');
 
+  private ngZone = inject(NgZone);
 
+  constructor(){
+
+  }
   ngAfterViewInit(): void {
-    AOS.init({
-      duration: 800,
-      once: true   // only animate once
+   this.ngZone.runOutsideAngular(() => {
+      AOS.init({
+        duration: 800,
+        once: true, // animate only once
+        easing: 'ease-in-out',
+        mirror: false, // don’t re-animate on scroll back
+        startEvent: 'load', // wait until window is fully loaded
+      });
+
+      // Give Angular a tick to render all components before refreshing AOS
+      setTimeout(() => {
+        AOS.refreshHard();
+      }, 500);
     });
-    AOS.refresh(); 
   }
 
 }
