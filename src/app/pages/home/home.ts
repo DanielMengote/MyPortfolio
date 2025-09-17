@@ -1,12 +1,11 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import Typewriter from 't-writer.js';
-import { SocialsButtons } from "../../shared/components/buttons/socials-buttons/socials-buttons";
 import { SocialsService } from '../../shared/services/socials-service';
 import { SocialInterface } from '../../shared/models/interfaces/social-interface';
 
 @Component({
   selector: 'app-home',
-  imports: [SocialsButtons],
+  imports: [],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })

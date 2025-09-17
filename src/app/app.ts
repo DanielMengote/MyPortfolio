@@ -16,14 +16,16 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App implements  OnInit  {
+export class App implements AfterViewInit {
   protected readonly title = signal('portfolio');
 
-   ngOnInit() {
+
+  ngAfterViewInit(): void {
     AOS.init({
-      offset: 120,
-      duration: 1000, 
-      once: true ,
+      duration: 800,
+      once: true   // only animate once
     });
+    AOS.refresh(); 
   }
+
 }
