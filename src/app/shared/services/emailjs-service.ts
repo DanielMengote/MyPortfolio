@@ -8,17 +8,17 @@ import { Contacts } from '../models/interfaces/contacts';
 export class EmailService {
 
     sendEmail(formData: Contacts): Promise<void> {
-    // Use emailjs.send (NOT sendForm)
+    
     return emailjs
       .send(
-        'service_qro1pd9',      // Service ID
-        'template_chy24ml',     // Template ID
+        'service_qro1pd9',      
+        'template_chy24ml',     
         {
           name: formData.name,
           email: formData.email,
           message: formData.message
-        },                       // pass as object
-        'xU_PPaozjAtvyiNt2'     // Public key
+        },                      
+        'xU_PPaozjAtvyiNt2'     
       )
       .then(() => {
         console.log('SUCCESS!');

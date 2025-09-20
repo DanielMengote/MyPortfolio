@@ -26,23 +26,17 @@ export class Home implements OnInit {
       deleteSpeed: 50,
       typeColor: ''
     })
-      writer
-        .type("A Web Developer.")
-        .rest(500)
-        .remove(16) 
-        .type("A Problem Solver.")
-        .rest(500)
-        .remove(17) 
-        .type("A Lifelong Learner.")
-        .rest(500)
-        .remove(21) 
-        .type("Passionate about clean code.")
-        .rest(1000)
-        .remove(28) 
-        .type("Turning your ideas into reality.")
-        .rest(1000)
-        .remove(27) 
-        .start();
+     writer
+      .type("A Web Developer.")
+      .rest(800)
+      .remove(16) 
+      .type("A Problem Solver.")
+      .rest(800)
+      .remove(17) 
+      .type("Turning ideas into reality.")
+      .rest(1000)
+      .remove(27) 
+      .start();
 } 
 
 }
