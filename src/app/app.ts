@@ -4,9 +4,10 @@ import { Footer } from "./shared/components/footer/footer";
 import AOS from 'aos';
 import { RouterOutlet } from '@angular/router';
 
+
 @Component({
   selector: 'app-root',
-  imports: [ Footer,Navbar, RouterOutlet],
+  imports: [Footer, Navbar, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
